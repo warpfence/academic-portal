@@ -82,9 +82,11 @@ academic-portal/
 
 이 프로젝트는 **AWS Lightsail** 환경에서 운영 중입니다.
 
+![시스템 아키텍처](documents/시스템아키텍처.png)
+
 - **서버**: Debian 12 + Node.js 20 + PM2 + Nginx
 - **HTTPS**: Let's Encrypt (Certbot, 도메인 연결 시)
-- **DB/업로드**: 서버 로컬 스토리지 (Lightsail 스냅샷으로 백업)
+- **DB/업로드**: 서버 로컬 스토리지 (수동 DB 백업 권장)
 
 ### 코드 업데이트
 
