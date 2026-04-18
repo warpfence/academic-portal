@@ -82,9 +82,23 @@ academic-portal/
 
 이 프로젝트는 **AWS Lightsail** 환경에서 운영 중입니다.
 
-- **서버**: Ubuntu 22.04 + Node.js 20 + PM2 + Nginx
-- **HTTPS**: Let's Encrypt (Certbot)
+- **서버**: Debian 12 + Node.js 20 + PM2 + Nginx
+- **HTTPS**: Let's Encrypt (Certbot, 도메인 연결 시)
 - **DB/업로드**: 서버 로컬 스토리지 (Lightsail 스냅샷으로 백업)
+
+### 코드 업데이트
+
+서버에 접속해 배포 스크립트 한 줄로 끝납니다. (git pull → build → PM2 재시작 → 헬스체크)
+
+```bash
+# 로컬에서 원격 실행
+ssh -i <키.pem> admin@<서버IP> './deploy.sh'
+
+# 또는 서버 접속 후
+./deploy.sh
+```
+
+스크립트 원본: [scripts/deploy.sh](scripts/deploy.sh)
 
 ## 라이선스
 
