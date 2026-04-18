@@ -28,6 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# 개인용 로컬 메모 (서버 IP, SSH 키 경로 등 환경별 정보)
+*.local.md
+
 # vercel
 .vercel
 
