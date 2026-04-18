@@ -1,5 +1,6 @@
 import Database from "better-sqlite3";
 import path from "path";
+import fs from "fs";
 import bcrypt from "bcryptjs";
 
 const DB_PATH = path.join(process.cwd(), "data", "academic.db");
@@ -8,8 +9,6 @@ let db: Database.Database;
 
 function getDb(): Database.Database {
   if (!db) {
-    // data 디렉토리가 없으면 생성
-    const fs = require("fs");
     const dir = path.dirname(DB_PATH);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });

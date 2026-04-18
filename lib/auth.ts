@@ -27,7 +27,8 @@ export function verifyCredentials(
   if (!admin) return null;
   if (!bcrypt.compareSync(password, admin.password)) return null;
 
-  const { password: _, ...adminData } = admin;
+  const { password: _password, ...adminData } = admin;
+  void _password;
   return adminData;
 }
 
